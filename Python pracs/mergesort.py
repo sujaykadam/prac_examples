@@ -10,8 +10,8 @@ lis=[9,0,5,1,8,3,7,2,6,4]
 def merge(lis,l,m,r):
 	i=l
 	j=m
-	n1=m-1-l
-	n2=r-m
+	n1=m-1
+	n2=r
 	temp=list()
 	while(i<=n1 and j<=n2):
 		if(lis[i]<lis[j]):
@@ -28,11 +28,10 @@ def merge(lis,l,m,r):
 		j+=1
 	for k in range(len(temp)):
 		lis[l+k]=temp[k]
-	print("merge"+(str([l,m,r])))
+	print(temp)
 def mergesort(lis,l,r):
 	if(l<r):
 		m=(l+r)//2
-		print(l,m,r)
 		mergesort(lis,l,m)
 		mergesort(lis,m+1,r)
 		merge(lis,l,m,r)

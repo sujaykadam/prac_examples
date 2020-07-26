@@ -13,7 +13,6 @@ def swap(i,j):
 def partition(lis,left,right):
 	i=left
 	pivot=lis[right]
-	ind=right
 	j=right-1
 	while(i<j):
 		while(lis[i]<=pivot):
@@ -22,7 +21,7 @@ def partition(lis,left,right):
 			j-=1
 		if(i<j):
 			swap(i,j)
-	swap(i,ind)
+	swap(i,right)
 	return i
 
 def quicksort(lis, left, right):
