@@ -1,14 +1,7 @@
-'''
 n=int(input("Enter number of elements: "))
 lis=list()
 for i in range(n):
 	lis.append(int(input("Enter element "+str(i+1)+": ")))
-'''
-import random
-import time
-lis=list()
-lis=[9,0,5,1,8,3,7,2,6,4]
-
 
 def merge(lis, l,m,r):
 	i,j=l,m+1
@@ -38,6 +31,5 @@ def mergesort(lis,l,r):
 		mergesort(lis,l,m)
 		mergesort(lis,m+1,r)
 		merge(lis,l,m,r)
-t1=time.time()
-mergesort(lis,0,9)
-print(lis,time.time(),t1)
+mergesort(lis,0,n-1)
+print(lis)
