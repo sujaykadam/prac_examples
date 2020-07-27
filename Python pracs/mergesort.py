@@ -4,37 +4,40 @@ lis=list()
 for i in range(n):
 	lis.append(int(input("Enter element "+str(i+1)+": ")))
 '''
+import random
+import time
 lis=list()
 lis=[9,0,5,1,8,3,7,2,6,4]
 
-def merge(lis,l,m,r):
-	i=l
-	j=m
-	n1=m-1
-	n2=r
-	temp=list()
+
+def merge(lis, l,m,r):
+	i,j=l,m+1
+	n1,n2=m,r
+	srt=list()
 	while(i<=n1 and j<=n2):
 		if(lis[i]<lis[j]):
-			temp.append(lis[i])
+			srt.append(lis[i])
 			i+=1
 		else:
-			temp.append(lis[j])
+			srt.append(lis[j])
 			j+=1
-	while(i<=n1):
-		temp.append(lis[i])
+	while (i<=n1):
+		srt.append(lis[i])
 		i+=1
-	while(j<=n2):
-		temp.append(lis[j])
+	while (j<=n1):
+		srt.append(lis[j])
 		j+=1
-	for k in range(len(temp)):
-		lis[l+k]=temp[k]
-	print(temp)
+	m=l
+	for k in srt:
+		lis[m]=k
+		m+=1
+
 def mergesort(lis,l,r):
 	if(l<r):
 		m=(l+r)//2
 		mergesort(lis,l,m)
 		mergesort(lis,m+1,r)
 		merge(lis,l,m,r)
-
+t1=time.time()
 mergesort(lis,0,9)
-print(lis)
+print(lis,time.time(),t1)
