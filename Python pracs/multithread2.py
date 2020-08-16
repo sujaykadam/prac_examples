@@ -8,4 +8,4 @@ for k in range(5):
 	t1=(time.time()-t1)
 	print(str(t1))
 	tg+=float(t1)
-print(tg/5)
+print("\n"+str(tg/5))
